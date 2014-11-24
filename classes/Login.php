@@ -49,8 +49,8 @@ class Login
     private function dologinWithPostData()
     {
         // Loads error messages containment
-        $openingAlert = "<div style='text-align:center;' class='container'><div class='row'><div class='col-md-4 col-md-offset-4'><div class='alert alert-danger center' role='alert'>";
-        $closingAlert = "</div></div></div></div>";
+        $openingAlert = "";
+        $closingAlert = "";
         // check login form contents
         if (empty($_POST['user_name'])) {
             $this->errors[] = "Username field was empty.";
@@ -100,10 +100,10 @@ class Login
 						
 
                     } else {
-                        $this->errors[] = $openingAlert . "Wrong password. Try again. </div>" . $closingAlert;
+                        $this->errors[] = $openingAlert . "Invaild Password" . $closingAlert;
                     }
                 } else {
-                    $this->errors[] = $openingAlert . "This user does not exist." . $closingAlert;
+                    $this->errors[] = $openingAlert . "This login does not exist." . $closingAlert;
                 }
             } else {
                 $this->errors[] = $openingAlert ."Database connection problem." . $closingAlert;
@@ -117,7 +117,7 @@ class Login
     public function doLogout()
     {
         // Loads error messages containment
-        $openingAlert = "<div style='text-align:center;' class='container'><div class='row'><div class='col-md-4 col-md-offset-4'><div class='alert alert-danger center' role='alert'>";
+        $openingAlert = "<div style='text-align:center;' class='container'><div class='row'><div class='col-sm-4 col-md-4 col-md-offset-4 col-sm-offset-4'><div class='alert alert-danger center' role='alert'>";
         $closingAlert = "</div></div></div></div>";
 
         // delete the session of the user

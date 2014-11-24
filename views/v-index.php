@@ -38,7 +38,7 @@
 				<h1>Clear, Clean, Customizable</h1>
 				<p><?php echo $errorMessage ?></p>
 			
-				<a class="btn animate" href="//github.com/idiot/unslider">Get Started Now</a>
+				<a class="btn animate" href="register.php">Get Started Now</a>
 			</div>
 		</li>
 		
@@ -72,7 +72,7 @@
 <div class="container" style="margin-top:25px;">
 	<div class="row section_info center">
 		<h1>Trust us, you need see what this software can do.</h1>
-				<a class="btn btn-standard animate" href="//github.com/idiot/unslider">View the features</a>
+				<a class="btn btn-standard animate" href="features.php">View the features</a>
 	</div>
 </div>
 

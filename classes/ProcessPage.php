@@ -31,8 +31,8 @@
 
 	// Navbar logged in status
 	if ($login->isUserLoggedIn() == true) {
-	   $navlogin = "Welcome <b>" . $_SESSION['user_name'] . "&nbsp;</b>&nbsp;<img class='account-avatar' width='30px' src='" . $grav_url . "'>";
-	   $loginH1DisplayTag = "Welcome <b>" . $_SESSION['user_name'] . "&nbsp;</b>&nbsp;<img class='account-avatar' src='" . $grav_url . "'>";
+	   	$navlogin = "Welcome <b>" . $_SESSION['user_name'] . "</b>";
+		$loginH1DisplayTag = "Welcome <b>" . $_SESSION['user_name'] . "</b>";
 
 	} else {
 	    $navlogin = "Login";

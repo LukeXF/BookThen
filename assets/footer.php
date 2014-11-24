@@ -32,6 +32,10 @@
 		function goBack() {
 		    window.history.back()
 		}
+		$('.features li').hover(
+		    function() { $('div', $(this)).show(); },
+		    function() { $('div', $(this)).hide(); }
+		)
 		</script>
 
 	</body>

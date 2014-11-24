@@ -1,5 +1,5 @@
 /* /////////////////////////////////
-	NAVBAR STYLING
+	GLOBAL STYLING
 ///////////////////////////////// */
 html, body {
 	height: 100%;
@@ -144,6 +144,10 @@ a {
 	border-radius: 10px;
 }
 
+.nav > .current > a {
+	font-weight: 600 !important;
+}
+
 
 /* /////////////////////////////////
 	HOMEPAGE STYLING
@@ -236,6 +240,13 @@ a.unslider-arrow.next {
 	font-weight: 100 !important;
 }
 
+.btn-login {
+	border: 1px solid white;
+	text-transform: inherit !important;
+	padding: 10px 40px;
+	margin-top: -5px !important;
+}
+
 .sizing > .btn {
 	margin-right: 50px;
 }
@@ -283,3 +294,362 @@ a.unslider-arrow.next {
 	color: inherit;
 	background-color: #eee;
 }
+
+
+/* /////////////////////////////////
+	FEATURES STYLING
+///////////////////////////////// */
+.features {
+    margin: 0px -5px 25px -5px;
+    display: block; 
+    text-align:center;
+	padding: 0px;
+
+}
+
+.features > a > li {
+    border-radius: 50%;
+    behavior: url(PIE.htc);
+    width: 50px;
+    height: 50px;
+    background: #29b5d5;
+    list-style: none;
+    margin: 5px;
+    display: inline-block;
+}
+
+.features > a> li > img {
+    height: 80%;
+    width: 80%;
+    margin: 10%;
+}
+
+.features > a> li > span {
+	display: none;
+	top: 0;
+	position: absolute;
+	text-align: center;
+	margin-top: 110px;
+	margin-left: -30px;
+}
+
+.features > a> li > div {
+	display: none;
+	position: absolute;
+	text-align: center;
+	width: 50px;
+	margin: auto;
+	margin-top: 5px;
+	line-height: 16px;
+}
+
+
+
+
+
+/* /////////////////////////////////
+	PRICING STYLING
+///////////////////////////////// */
+.main-title {
+    text-align:center
+}
+
+.pricing-tables {
+    padding:20px
+}
+
+.pricing-tables h1 {
+    font-size:48px
+}
+
+.pricing-tables .plan.first {
+    border-bottom-left-radius:4px;
+    border-top-left-radius:4px
+}
+
+.pricing-tables .plan.last {
+    border-bottom-right-radius:4px;
+    border-top-right-radius:4px
+}
+
+.pricing-tables .plan.recommended {
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px
+}
+
+.pricing-tables .plan.recommended .head {
+    margin-bottom:20px;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px
+}
+
+.pricing-tables.attached .col-sm-4,.pricing-tables.attached .col-md-4,.pricing-tables.attached .col-sm-3,.pricing-tables.attached .col-md-3 {
+    padding-left:0;
+    padding-right:0
+}
+
+.pricing-tables.attached .plan {
+    border-radius:0
+}
+
+.pricing-tables.attached .plan .head {
+    border-radius:0
+}
+
+.pricing-tables.attached .plan.recommended {
+    border-radius:4px
+}
+
+.pricing-tables.attached .plan.last {
+    border-bottom-right-radius:4px
+}
+
+.pricing-tables.attached .plan.last .head {
+    border-top-right-radius:4px
+}
+
+.pricing-tables.attached .plan.first {
+    border-bottom-left-radius:4px
+}
+
+.pricing-tables.attached .plan.first .head {
+    border-top-left-radius:4px
+}
+
+.plan {
+    box-shadow:0 2px 2px rgba(10,10,10,0.06);
+    min-height:100px;
+    background:#fff;
+    border-radius:4px;
+    margin:20px 0;
+    padding-bottom:25px;
+    text-align:center
+}
+
+.plan .head {
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    padding:12px 16px;
+    background: #171717;
+    color:#fff
+
+}
+
+.plan .head h1,.plan .head h2,.plan .head h3 {
+    padding:0;
+    margin:0;
+    font-weight:100
+}
+
+.plan .price {
+	margin: -2px auto 2px;
+	width: 80%;
+	background-color: #29b5d5;
+	padding: 30px 0;
+}
+.plan .price h3 {
+	font-size: 82px;
+	vertical-align: top;
+	line-height: 1;
+	margin: 3px 0px 12px;
+}
+
+.plan .price h3 span {
+    font-size:28px;
+    vertical-align:top;
+    position:relative;
+    margin:6px 0 0 -7px;
+    display:inline-block
+}
+.plan .price h3 span.symbol2 {
+    vertical-align: bottom;
+}
+
+.plan .price h4 {
+    color:#aaa;
+    font-size:14px
+}
+
+.plan .btn {
+    padding:10px 30px;
+    text-transform:uppercase;
+    font-weight:500
+}
+
+.plan ul {
+    list-style-type:none;
+    padding: 0px;
+    margin-top: -2px
+}
+
+.plan ul li {
+	line-height: 22px;
+	font-size: 14px;
+	font-weight: 400;
+	background-color: #eee;
+	padding: 20px 45px;
+	border-bottom: 1px solid #E0E0E0;
+}
+
+.plan ul li:last-child {
+    border-bottom:none
+}
+
+.plan ul strong {
+    font-weight:700
+}
+
+.plan.recommended {
+    margin-top:6px;
+    box-shadow:0 0 22px rgba(10,10,10,0.42);
+    position:relative;
+    z-index:99;
+    border-radius:4px
+}
+
+.plan.recommended .head {
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    background:#171717
+}
+
+.plan.recommended .btn {
+    margin-bottom:10px
+}
+
+.head.price {
+	width: 100%;
+}
+
+.plan.recommended > .price {
+	margin-top: -22px;
+	min-height: 174px;
+	background-color: #29b5d5;
+}
+
+.plan.recommended > .price > h3 {
+	margin: 20px 0px;
+}
+
+.head.price > span {
+	font-family: 'proxima-nova';
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.recommended > .head.price {
+	margin-bottom: -4px !important;
+}
+
+.plan .btn {
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+.recommended > .btn.btn-standard {
+	text-decoration: none;
+	background-color: #29B5D5;
+	color: #fff;
+	border-radius: 7px;
+	border: 1px solid #fff;
+}
+
+.featured_image > div {
+	border-radius: 50%;
+	behavior: url(PIE.htc);
+	width: 50px;
+	height: 50px;
+	background: #29b5d5;
+	list-style: none;
+	margin: 5px;
+	display: inline-block;
+}
+
+.featured_image > div > img {
+	width: 80%;
+	margin: 10%;
+}
+
+.featured_image > span {
+	font-size: 15px;
+	position: absolute;
+	margin-top: 9px;
+}
+
+.account {
+	background-color: #FFF;
+	border-radius: 10px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-top: 47px;
+	margin-right: 20px;
+	padding: 10px;
+}
+
+.account > div {
+	width: 30px;
+	height: 30px;
+	min-width: 30px;
+	min-height: 30px;
+	background-size: 100% 100% !important;
+}
+
+.account-blue > div {
+	background: url('http://demo.luke.sx/booking/assets/img/logo.png');
+}
+.account-white > div {
+	background: url('http://demo.luke.sx/booking/assets/img/logo-white.png');
+}
+.account-bronze > div {
+	background: url('http://demo.luke.sx/booking/assets/img/logo-bronze.png');
+}
+.account-silve > div {
+	background: url('http://demo.luke.sx/booking/assets/img/logo-silver.png');
+}
+.account-gold > div {
+	background: url('http://demo.luke.sx/booking/assets/img/logo-gold.png');
+}
+
+.recommended > div > .account {
+	margin-top: 26px;
+}
+
+button.btn.btn-standard {
+	color: #29b5d5;
+	background-color: #fff;
+}
+button.btn.btn-standard:hover {
+	background-color: #29b5d5;
+	color: #fff;
+	border: 1px solid #29B5D5;
+}
+
+.row.section_info > .btn-group {
+	margin-bottom: 30px;
+}
+
+.account-features {
+	min-height: 400px !important;
+}
+
+.make-silver > div {
+	background-color: silver;
+}
+
+.make-gold > div {
+	background-color: #c98910;
+}
+
+hr.space {
+	margin-top: 45px;
+	margin-bottom: 45px;
+}
+
+.magic:hover {
+	border: 1px solid #29B5D5;
+}
+.placeholder {
+	padding: 82px;
+	padding-top: 0px;
+}
+

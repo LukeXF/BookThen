@@ -4,7 +4,7 @@
 		<div class="col-md-2" style="padding-top:20px;">
 			<div class="avatar">
 				<img class="avatar" src="<?php echo $grav_url; ?>"><br>
-				<a class="logout" href="account.php?logout">Logout</a>
+				<a class="logout" href="?logout">Logout</a>
 			</div>
 		</div>
 
