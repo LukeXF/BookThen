@@ -6,7 +6,6 @@
     // load the login class
     require_once("classes/Login.php");
     require_once("classes/Registration.php");
-    // Process the page loading
     require("classes/ProcessPage.php");
 
     // Load navbar

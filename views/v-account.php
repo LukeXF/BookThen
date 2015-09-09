@@ -1,244 +1,187 @@
+<?php
+	$bookedLessons = 0;
+	$currency = "£";
+	$paymentsThisMonth = 0;
+	$clientsName = "Students";
+?>
+
+<div class="page_title">
+	<div class="container">
+		<h2 class="left">YourBrand</h2>
+		<ul class="nav nav-tabs nav-tabs-right">
+			<li role="presentation" class="active"><a class="animate" href="#"><img class="nav-tabs-icons" src="assets/img/icon-home.png"></i>Summary</a></li>
+			<li role="presentation"               ><a class="animate" href="#"><img class="nav-tabs-icons" src="assets/img/icon-calendar3.png"></i>Schedule</a></li>
+			<li role="presentation"               ><a class="animate" href="#"><img class="nav-tabs-icons" src="assets/img/icon-book.png"></i>Bookings</a></li>
+			<li role="presentation"				  ><a class="animate" href="#"><img class="nav-tabs-icons" src="assets/img/icon-profile.png"></i>Clients</a></li>
+		</ul>
+	</div>
+</div>
+
 <div class="container">
-	<div class="row" style="margin-top:50px;">
-
-		<div class="col-md-2" style="padding-top:20px;">
-			<div class="avatar">
-				<img class="avatar" src="<?php echo $grav_url; ?>"><br>
-				<a class="logout" href="?logout">Logout</a>
-			</div>
-		</div>
-
-		<div class="col-md-5">
-			<div class="form-box">
-					<h3><i class="fa fa-shopping-cart"></i> <b>0</b> products are in your cart.</h3>
-					<h5><a href="t">View your cart now</a></h5>
-					<h3><i class="fa fa-paper-plane"></i> <b>0</b> products are on the way to you.</h3>
-					<h5><a href="t">Track your orders</a></h5>
-			</div>
-		</div>
-
-		<div class="col-md-5">
-			<div class="form-box">
-					<h3><i class="fa fa-pencil"></i> <b>0</b> products awaiting your review</h3>
-					<h5><a href="t">Write your opinion now</a></h5>
-					<h3><i class="fa fa-warning"></i> <b>0</b> issues that need addressing</h3>
-					<h5><a href="t">Address issues at hand</a></h5>
-			</div>
-		</div>
-
-	</div>
-	<hr>
 	<div class="row">
-		<h3>Your Details</h3>
-		<div class="col-md-3">
-			<p class="form">
-				<label class="et_pb_contact_form_label">First Name</label>
-				<input type="text" class="input et_pb_contact_name" readonly=readonly placeholder="<?php echo $_SESSION['user_name']; ?>" name="et_pb_contact_name">
-			</p>
-		</div>
-		<div class="col-md-3">
-			<p class="form">
-				<label class="et_pb_contact_form_label">Last Name</label>
-				<input type="text" class="input et_pb_contact_name" readonly=readonly placeholder="<?php echo $_SESSION['user_last'];?>" name="et_pb_contact_name">
-			</p>
-		</div>
-		<div class="col-md-5">
-			<p class="form">
-				<label class="et_pb_contact_form_label">Email Address</label>
-				<input type="text" class="input et_pb_contact_email" readonly=readonly value="<?php echo $_SESSION['user_email'];?>" name="et_pb_contact_email">
-			</p>
+
+		<div class="col-md-1" style="padding-top:20px;">
+			<div class="avatar">
+				<img class="avatar" src="<?php echo $grav_url; ?>">
+				<!--<a class="logout" href="?logout">Logout Safely</a>-->
+			</div>
 		</div>
 
-	</div>
-	<div class="row" style="margin-top:30px;">
-		<div class="col-md-4">
-			<p class="form">
-				<?php
-					switch ($_SESSION['user_type']) {
-						case "0": $accountType = "Disabled Account";	break;
-						case "1": $accountType = "Normal Account (Client";	break;
-						case "2": $accountType = "Business Account";	break;
-						case "3": $accountType = "Joint Account (Business & Shop)";	break;
-						case "4": $accountType = "Admin Account";	break;
-						default: $accountType = $_SESSION['user_type']; 
-					}
-				?>
-				<label class="et_pb_contact_form_label">Account Type</label>
-				<input type="text" class="input et_pb_contact_name" readonly=readonly value="<?php echo $accountType; ?>" name="et_pb_contact_name">
-			</p>
+		<div class="col-md-11">
+			<h2>
+				Hello there <?php echo $_SESSION['user_name']; ?>, 
+				today's date is <?php echo date('l jS \of F'); ?>. 
+				You have <?php echo $bookedLessons ?> lessons booked for today. 
+				This month's bookings total is <?php echo $currency . $paymentsThisMonth; ?>.
+
+			</h2>
 		</div>
-		<div class="col-md-4">
+	</div>
+
+	<hr>
+
+	<div class="row">
+
+		<div class="col-md-2 col-xs-4">
+			<div class="backing"><h1>7</h1><span>Overall <?php echo $clientsName; ?></span></div>
+		</div>
+
+		<div class="col-md-2 col-xs-4">
+			<div class="backing"><h1>5</h1><span><?php echo $clientsName; ?> this month</span></div>
+		</div>
+
+		<div class="col-md-2 col-xs-4">
+			<div class="backing"><h1>12</h1><span>Total active classes</span></div>
+		</div>
+
+		<div class="col-md-2 col-xs-4">
+			<div class="backing"><h1>48</h1><span>Lessons booked</span></div>
+		</div>
+
+		<div class="col-md-2 col-xs-4">
+			<div class="backing"><h1>£129</h1><span>Overall earnings</span></div>
+		</div>
+
+		<div class="col-md-2 col-xs-4">
+			<div class="backing"><h1>£35</h1><span><?php echo date('F');?> earnings</span></div>
+		</div>
+
+
+		<!--<div class="col-md-4">
 			<p class="form">
-				<?php
+				<?php /*
 					// Sets the date joined into a human format
 					$userjoined = strtotime($_SESSION['user_date']);
 					$userjoined_1 = date( 'l jS F Y', $userjoined );
-					$userjoined_2 = date( 'H:ia', $userjoined );
+					$userjoined_2 = date( 'H:ia', $userjoined ); */
 				?>
 				<label class="et_pb_contact_form_label">Date Registered</label>
 				<input type="text" class="input et_pb_contact_name" readonly=readonly value="<?php echo $userjoined_1 . " " . $userjoined_2; ?>" name="et_pb_contact_name">
 			</p>
-		</div>
+		</div>-->
 
 	</div>
 
 
-	<hr>
-
 
 	<div class="row">
-		<h3>Your Orders</h3>
-		<!--<div class="col-md-6">
-			<pre>
-				<?php // print_r($orderArray); ?>
-			</pre>
-		</div>-->
-		<!--<div class="col-md-6">
-			<pre>
-				<?php // print_r($productsInArray); ?>
-			</pre>
-		</div>-->
-		<div class="col-md-6">
-			<pre>
-				<?php print_r($finalOrderList);
 
-				$amountOfProducts = 2;
-				$height = ($amountOfProducts * 130) + 74 . "px";
-				?>
-			</pre>
+		<div class="col-md-4 display-timetable">	
+			<div class="display-head">	
+				<h3>Today - <?php echo date('l jS'); ?></h3>
+			</div>
+			<div class="display-content">
+
+				<div class="display-lesson row display-lesson-completed">
+					<div class="col-md-6"><span><b>9:00AM-10:00AM</b></span></div>
+					<div class="col-md-6"><span>Morning Yogo</span></div>
+				</div>
+				<div class="display-lesson row">
+					<div class="col-md-6"><span><b>12:00AM-12:15PM</b></span></div>
+					<div class="col-md-6"><span>Lunch Bruv</span></div>
+				</div>
+				<div class="display-lesson row">
+					<div class="col-md-6"><span><b>2:00PM-4:00PM</b></span></div>
+					<div class="col-md-6"><span>Really Big Hoops</span></div>
+				</div>
+				<div class="display-lesson row">
+					<div class="col-md-6"><span><b>8:15PM-9:50PM</b></span></div>
+					<div class="col-md-6"><span>Mixed Ariel</span></div>
+				</div>
+
+			</div>
+
 		</div>
 
-		<div class="col-md-12">
-			<?php
-				reset($finalOrderList);
 
-				// Counts finalOrderList array to stop the while loop going on forever if an error occurs.
-				$countOrders = count($finalOrderList);
-				// Sets the counter to 1 for use in the while loop
-				$displayCounter = 1; 
+		<div class="col-md-5 display-timetable">		
+			<div class="display-head">
+				<h3>< <?php echo date("F");  ?> ></h3>
+			</div>
+			<div class="display-content">
 
-				while ($displayCounter <= $countOrders) {
-					$o_order_id       = $finalOrderList['Order ' . $displayCounter]['OrderInfo']['order_id'];
-					$o_date           = $finalOrderList['Order ' . $displayCounter]['OrderInfo']['date'];
-					$o_status         = $finalOrderList['Order ' . $displayCounter]['OrderInfo']['status'];
-					$o_user_comments  = $finalOrderList['Order ' . $displayCounter]['OrderInfo']['user_comments'];
-					$o_admin_comments = $finalOrderList['Order ' . $displayCounter]['OrderInfo']['admin_comments'];
-
-					echo "<div class='col-md-9'>";
-					echo "<div class='thumbnail account-overview' style='min-height:" . $height . "'>";
-					echo "<div class='title row'>";
-					echo "<div class='col-md-4 order-title'><b>Latest Order " . $displayCounter . "</b> <i>OrderID #" . $o_order_id . "</i> </div>";
-
-
-
-					// Gets the product count for that order
-					$countProductOrders = count($finalOrderList['Order ' . $displayCounter]['ProductInfo']);
-					$displayProductCounter2 = 0; // The total order amount counter
-					$displayProductCounter = 0; // The product display counter
-
-					// Sets the value of the totalPriceOrder array for later use and later calculation
-					while ($displayProductCounter2 < $countProductOrders) { 
-						$p_price2 = $finalOrderList['Order ' . $displayCounter]['ProductInfo']['Product ' . $displayProductCounter2]['Price'];
-						// Adds to the total price order array the price of each product for later displaying
-						$totalPriceOrder[$displayCounter][$displayProductCounter2] = $p_price2;
-						$displayProductCounter2++;
-					}
-
-					// displays the total amount of products inside an order
-					echo "<div class='col-md-4 col-md-offset-4 title-right'>";
-					switch ($countProductOrders) {
-						case "0": echo "Zero";	break;
-						case "1": echo "One";	break;
-						case "2": echo "Two";	break;
-						case "3": echo "Three";	break;
-						case "4": echo "Four";	break;
-						case "5": echo "Five";	break;
-						case "6": echo "Six";	break;
-						case "7": echo "Seven";	break;
-						case "8": echo "Eight";	break;
-						case "9": echo "Nine";	break;
-						case "69": echo "69 hehe :)"; break; // That's right
-						default: echo $countProductOrders; 
-					}
-					echo " Items - <b>$" . array_sum( $totalPriceOrder[$displayCounter] ) . "</b></div>";
-					echo "</div>";
+				<div class="display-calendar row">
+					<div class="col-md-1">1</div>
+					<div class="col-md-1">2</div>
+					<div class="col-md-1">3</div>
+					<div class="col-md-1">4</div>
+					<div class="col-md-1">5</div>
+					<div class="col-md-1 calendar-selected">6</div>
+					<div class="col-md-1">7</div>
+					<div class="col-md-1 calendar-selected">8</div>
+					<div class="col-md-1">9</div>
+					<div class="col-md-1">10</div>
+					<div class="col-md-1">11</div>
+					<div class="col-md-1">12</div>
+					<div class="col-md-1">13</div>
+					<div class="col-md-1 calendar-selected">14</div>
+					<div class="col-md-1">15</div>
+					<div class="col-md-1">16</div>
+					<div class="col-md-1">17</div>
+					<div class="col-md-1">18</div>
+					<div class="col-md-1">19</div>
+					<div class="col-md-1">20</div>
+					<div class="col-md-1">21</div>
+					<div class="col-md-1">22</div>
+					<div class="col-md-1">23</div>
+					<div class="col-md-1">24</div>
+					<div class="col-md-1">25</div>
+					<div class="col-md-1">26</div>
+					<div class="col-md-1">27</div>
+					<div class="col-md-1">28</div>
+					<div class="col-md-1">29</div>
+					<div class="col-md-1">30</div>
+					<div class="col-md-1">21</div>
+				</div>
+			</div>
+		</div>
 
 
-					// Displays all the products inside the order
-					while ($displayProductCounter < $countProductOrders) { 
-						echo "<div class='row force-padding'>";
-						echo "<div class='col-md-3'>";
-						echo "		<img src='/assets/img/store/" . $finalOrderList['Order ' . $displayCounter]['ProductInfo']['Product ' . $displayProductCounter]['Product Number'] . ".png' style='height:75px; width:160px;' alt='Image not found' />";
-						echo "	</div>";
+		<div class="col-md-3 display-timetable">	
+			<div class="display-head">	
+				<h3>Info</h3>
+			</div>
+			<div class="display-content">
 
-						echo "<div class='col-md-9'>";
-						echo "<div class='caption'>";
-						$p_number   = $finalOrderList['Order ' . $displayCounter]['ProductInfo']['Product ' . $displayProductCounter]['Order_id'];
-						$p_quantity = $finalOrderList['Order ' . $displayCounter]['ProductInfo']['Product ' . $displayProductCounter]['Quantity'];
-						$p_price    = $finalOrderList['Order ' . $displayCounter]['ProductInfo']['Product ' . $displayProductCounter]['Price'];
-						echo "<h4 class='pull-right'>" . $p_quantity . " ordered. <b>$" . $p_price . "</b></h4>";
+			</div>
+		</div>
 
-						// Gets product ID for the product that is been echoed in the while loop
-						$whileProductID = $finalOrderList['Order ' . $displayCounter]['ProductInfo']['Product ' . $displayProductCounter]['Product Number'];
 
-						echo "<h4><a href='#'>" .  $fullProductArray['Product ' . $whileProductID ]['Product Name'] . " </a> ";
-						echo " <i> ProductID #" .  $fullProductArray['Product ' . $whileProductID ]['Product ID'] . "</i></h4>";
-						echo "<p>" .  limit_desc($fullProductArray['Product ' . $whileProductID ]['Product Desc'],25) . "</p>";
-						echo "</div>";
-						echo "</div>";
-						echo "</div>";
-						echo "<hr>";
-						$displayProductCounter++;
-					}
+		<!--<div class="col-md-4">
+			<p class="form">
+				<?php /*
+					// Sets the date joined into a human format
+					$userjoined = strtotime($_SESSION['user_date']);
+					$userjoined_1 = date( 'l jS F Y', $userjoined );
+					$userjoined_2 = date( 'H:ia', $userjoined ); */
+				?>
+				<label class="et_pb_contact_form_label">Date Registered</label>
+				<input type="text" class="input et_pb_contact_name" readonly=readonly value="<?php echo $userjoined_1 . " " . $userjoined_2; ?>" name="et_pb_contact_name">
+			</p>
+		</div>-->
 
-					echo "</div>";
-					echo "</div>";
+	</div>
 
-					echo "<div class='col-md-3'>";
-					echo "<div class='thumbnail account-overview account-right' style='min-height:" . $height . "'>";
-					echo "<div class='title row'>";
-
-					// Creates date for the order array
-					$phpdate = strtotime( $o_date );
-					$o_date2 = date( 'l jS', $phpdate );
-					$o_date3 = date( 'H:ia', $phpdate );
-					echo "<div class='col-md-12 title-right'>Placed <b>" . $o_date3 . "</b> - <b>" . $o_date2 . " " . date('M') . "</b></div>";
-					echo "</div>";
-					echo "<div class='row force-padding'>";
-
-					// Displays the order status
-					switch ($o_status) {
-						case "0": $finalStatus = "We&#39;ve recived your order";		break;
-						case "1": $finalStatus = "We&#39;re getting your order ready";	break;
-						case "2": $finalStatus = "Order is on it&#39;s way - Dispatched";	break;
-						case "3": $finalStatus = "Order Completed";		break;
-						default: echo $o_status; 
-					}
-					echo "<p class='form'>";
-					echo "<label class='et_pb_contact_form_label'>Status</label>";
-					echo "<input type='text' class='input et_pb_contact_name' readonly='readonly' placeholder='" . $finalStatus . "' name='et_pb_contact_name'>";
-					echo "</p>";
-
-					// Displays user comments
-					echo "<p class='form'>";
-					echo "<label class='et_pb_contact_form_label'>User Comments</label>";
-					echo "<input type='text' class='input et_pb_contact_name' readonly='readonly' placeholder='" . $o_user_comments . "' name='et_pb_contact_name'>";
-					echo "</p>";
-
-					// Displays Admin comments
-					echo "<p class='form'>";
-					echo "<label class='et_pb_contact_form_label'>Admin Comments</label>";
-					echo "<input type='text' class='input et_pb_contact_name' readonly='readonly' placeholder='" . $o_admin_comments . "' name='et_pb_contact_name'>";
-					echo "</p>";
-
-					echo "</div>";
-					echo "</div>";
-					echo "</div>";
-
-					
-					$displayCounter++;
-				}
-			?>
 
 
 	</div>

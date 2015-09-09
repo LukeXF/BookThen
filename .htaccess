@@ -8,8 +8,8 @@
 
 RewriteEngine On
 Options -Indexes
-ErrorDocument 403 http://booking.luke.sx/404
-ErrorDocument 404 http://booking.luke.sx/404
+ErrorDocument 403 http://booket.co.uk/404
+ErrorDocument 404 http://booket.co.uk/404
 
 RewriteEngine On
 RewriteBase /

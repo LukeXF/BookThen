@@ -1,93 +1,111 @@
-<?php
-    // show potential errors / feedback (from registration object)
-    if (isset($registration)) {
-        if ($registration->errors) {
-            foreach ($registration->errors as $error) {
-                echo $error;
-            }
-        }
-        if ($registration->messages) {
-            foreach ($registration->messages as $message) {
-                echo $message;
-            }
-        }
-    }
-?>
+<ol class="breadcrumb_menu">
+    <div class="container breadcrumb">
+        <li><a href="<?php echo $mainurl; ?>">Home</a></li>
+        <li class="active">Login</li>
+    </div>
+</ol>
+<div class="page_title">
+    <div class="container">
+        <h2 class="center"><?php echo $brand; ?> Login</h2>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="pricing-tables attached">
+        <div class="row">
+            <div class="col-sm-10 col-md-10 col-md-offset-1 col-sm-offset-1">
+            
+                <form style="margin-bottom:50px;" method="post" action="register.php" name="registerform">
+                    <div class="plan recommended">
+                        <div class="head">
+                            <h2>
+                                <?php   // show potential errors / feedback (from login object)
+                                    if (isset($login)) {
+                                        if ($login->errors) {
+                                            foreach ($login->errors as $error) {
+                                                echo $error;
+                                            }
+                                        }
+                                        if ($login->messages) {
+                                            foreach ($login->messages as $message) {
+                                                echo $message;
+                                            }
+                                        }
+                                    } else {
+                                        echo "Signup or Login";
+                                    }
+                                ?>
+                            </h2>
+                        </div>
+                        <ul class="item-list" style="margin-top: -20px;">
+                            <li>
+                                <div class="row" style="padding-top: 30px;">
+                                    <div class="col-md-4">  
+                                        <p class="form">
+                                            <label class="et_pb_contact_form_label">First Name</label><br>
+                                            <input id="login_input_username" class="btn btn-login" type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_name" required placeholder="First Name" />
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-4">  
+                                        <p class="form">
+                                            <label class="et_pb_contact_form_label">Last Name</label><br>
+                                            <input type="text"  class="btn btn-login" placeholder="Last Name">
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <p class="form">
+                                            <label class="et_pb_contact_form_label">Email Address</label><br>
+                                            <input id="login_input_email" class="btn btn-login" type="email" name="user_email" required placeholder="email address" />
+                                        </p>
+                                    </div>
+
+                                </div>
+                                <div class="row" style="margin-top:20px;">
+                                    <div class="col-md-4">  
+                                        <p class="form">
+                                            <label class="">What is this account mainly for?</label>
+                                            <select class="form btn btn-login">
+                                                <option>Personal - $14</option>
+                                                <option>Professional - $24</option>
+                                                <option>Business - $44</option>
+                                            </select>           
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-4">  
+                                        <p class="form">
+                                            <label class="et_pb_contact_form_label">Password</label>
+                                            <input id="login_input_password_new" class="btn btn-login" type="password" name="user_password_new" pattern=".{6,}" required autocomplete="off" placeholder="password"/>
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-4">  
+                                        <p class="form">
+                                            <label class="et_pb_contact_form_label">Confirm</label>
+                                            <input id="login_input_password_repeat" class="btn btn-login" type="password" name="user_password_repeat" pattern=".{6,}" required autocomplete="off" placeholder="confirm password" />
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </li>                               
+                        </ul>
+                        <button style="display: inline" type="submit"  name="register" value="Register" class="btn btn-standard form-button red">Register</button>
+                    </div>
+                 </form>
+
+
+
+
+            </div>          
+    </div> <!-- login -->
+</div>
+
 <div class="container">
         <h1 class="et_pb_contact_main_title">Register with us</h1>
-        <form style="margin-bottom:50px;" method="post" action="register.php" name="registerform">
-
-
-            <div class="row">
-
-                <div class="col-md-4">  
-                    <p class="form">
-                        <label class="et_pb_contact_form_label">First Name</label>
-                        <input id="login_input_username" class="login_input" type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_name" required placeholder="First Name" />
-                    </p>
-                </div>
-
-                <div class="col-md-4">  
-                    <p class="form">
-                        <label class="et_pb_contact_form_label">Last Name</label>
-                        <input type="text">
-                    </p>
-                </div>
-
-                <div class="col-md-4">
-                    <p class="form">
-                        <label class="et_pb_contact_form_label">Email Address</label>
-                        <input id="login_input_email" class="login_input" type="email" name="user_email" required placeholder="email address" />
-                    </p>
-                </div>
-
-            </div>
-            <div class="row" style="margin-top:20px;">
-
-                <div class="col-md-6">  
-                    <p class="form">
-                        <label class="et_pb_contact_form_label">What is this account mainly for?</label>
-                        <select class="form">
-                            <option>Customer Account - I will be using the shop</option>
-                            <option>Business Account - I am looking to use the advertisement scheme</option>
-                            <option>Joint Account - I will be using both</option>
-                        </select>           
-                    </p>
-                </div>
-
-                <div class="col-md-3">  
-                    <p class="form">
-                        <label class="et_pb_contact_form_label">Password</label>
-                        <input id="login_input_password_new" class="login_input" type="password" name="user_password_new" pattern=".{6,}" required autocomplete="off" placeholder="password"/>
-                    </p>
-                </div>
-
-                <div class="col-md-3">  
-                    <p class="form">
-                        <label class="et_pb_contact_form_label">Confirm</label>
-                        <input id="login_input_password_repeat" class="login_input" type="password" name="user_password_repeat" pattern=".{6,}" required autocomplete="off" placeholder="confirm password" />
-                    </p>
-                </div>
-
-                <div class="col-md-3 col-md-offset-9">
-                    <button style="display: inline" type="submit"  name="register" value="Register" class="form-button red">Register</button>
-                </div>
-
-
-            </div>
-
-        </form>
+       
     </div>
-    <div class="container" id="about-guns" style="margin-bottom:-30px;">
-        <div class="row about-guns">
-            <div class="col-md-6">          
-                <h2>More Info</h2>
-                <p><strong>If you are interested in Sponsoring us here on the website or advertising with us on our instagram or other social media head over our <a href="advertise" target="_blank">Advertise</a> page. If you just want to get ahold of us for any other matter please fill out the form to the left and we will get back to you ASAP. Usually within 24 hours.</strong></p>
-            </div>
-            <div class="col-md-6">      
-                <h2>About Us</h2>
-                <p><strong>Gunsdaily was formed on Febuary 3rd 2013, just a few months after the horrible shooting at Sandy Hook school. Our main goal back then and still, is to shine a less evil light on the topic that is guns. For many people, We are a friend business aimed at portaying guns in the right way.</strong></p>
 
-            </div>
-        </div>
-    </div>
+

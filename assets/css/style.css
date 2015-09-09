@@ -289,7 +289,7 @@ a.unslider-arrow.next {
 }
 
 .page_title {
-	padding: 20px 0px;
+	padding: 20px 0px 0px;
 	margin-bottom: 30px;
 	color: inherit;
 	background-color: #eee;
@@ -653,3 +653,143 @@ hr.space {
 	padding-top: 0px;
 }
 
+select.form.btn.btn-login {
+	width: 98%;
+	height: 51px;
+	color: #999;
+}
+
+img.avatar {
+	border-radius: 5px;
+	margin: auto;
+	display: -webkit-box;
+	height: 70px;
+}
+
+.avatar > a.logout {
+	margin: auto;
+	display: inherit;
+	text-align: center;
+	padding: 10px;
+}
+
+.backing {
+	background-color: #29b5d5;
+	min-height: 120px;
+	padding: 1px 10px;
+	border-radius: 10px;
+	margin: 20px 0px;
+	color: white;
+}
+
+.backing > h1 {
+	font-size: 70px;
+	margin-bottom: -9px;
+}
+.backing > span {
+	padding: 6px;
+}
+
+.display-timetable {
+	text-align: center;
+	padding: 10px;
+}
+
+.display-head {
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+	padding: 2px 0px;
+	font-size: 30px;
+	background: #171717;
+	color: #fff;
+}
+
+.display-content {
+	background-color: #eee;
+	min-height: 300px;
+	padding-top: 10px;
+}
+
+.display-head > h3 {
+	margin-top: 10px;
+}
+
+.display-lesson {
+	background-color: #29b5d5;
+	margin: 5px 30px; 
+	padding: 10px;
+	color: white;
+	border-radius: 6px;
+}
+
+.display-lesson span, .display-lesson span b {
+	font-family: "proxima-nova";
+}
+
+.display-lesson > .col-md-6:nth-child(1) {
+	text-align: left;
+}
+
+.display-lesson > .col-md-6:nth-child(2) {
+	text-align: right;
+}
+
+.display-lesson-completed {
+	opacity: 0.7 !important;
+	background-color: rgba(41, 181, 213, 0.29);
+}
+
+.display-calendar {
+	width: 100%;
+	margin: 25px;
+}
+
+.display-calendar > div {
+	background-color: #29b5d5;
+	margin: 4px 4px;
+	padding: 10px;
+	color: white;
+	border-radius: 6px;
+}
+
+
+.calendar-selected {
+	background: #3598AE !important;
+	cursor: pointer;
+}
+
+
+.nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
+	background-color: transparent;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active >a:focus {
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	background: white !important;
+}
+
+.nav-tabs > li > a {
+	color: #333;
+	font-family: "proxima-nova";
+	font-weight: 100;
+	font-size: 25px;
+}
+
+.nav-tabs {
+	margin-top: -35px;
+}
+
+
+.nav-tabs-right {
+	float: right;
+}
+
+.nav-tabs-icons {
+	width: 40px;
+	opacity: 0.6;
+}
+
+img.nav-tabs-icons {
+	margin-top: -4px;
+}

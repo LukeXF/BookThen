@@ -1,8 +1,8 @@
 <?php
 	date_default_timezone_set('UTC');
 	
-	$mainurl = "http://booking.luke.sx";
-	$brand = "BookThen";
+	$mainurl = "http://booket.co.uk";
+	$brand = "Booket";
 	// Sets the values for the navbar
 	$navbar = array(
 		"Features" =>   array(
@@ -38,7 +38,7 @@
 <html lang="en">
 <head>
 
-	<title>BookThen</title>
+	<title>Booket</title>
 
 <!-- ////////////////////////////////////
 	HEADER LINKS
